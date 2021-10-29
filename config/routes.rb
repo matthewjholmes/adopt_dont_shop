@@ -8,8 +8,8 @@ Rails.application.routes.draw do
 
   # post '/applications', controller: :application_pets, action: :create
   # patch '/applications', controller: :application_pets, action: :update
-  post '/applications/:application_id/:pet_id', to: 'application_pets#create'
-  patch '/applications/:application_id/:pet_id', to: 'application_pets#update'
+  # post '/applications/:application_id/:pet_id', to: 'application_pets#create'
+  # patch '/applications/:application_id/:pet_id', to: 'application_pets#update'
 
   namespace :admin do
     resources :shelters

@@ -7,7 +7,7 @@ class ApplicationPetsController < ApplicationController
   end
 
   def update
-    application_pet = ApplicationPet.find_by(application_id: params[:application_id], pet_id: params[:pet_id])
+    application_pet = ApplicationPet.find_by(application_id: params[:application_id], pet_id: params[:id])
     if params[:status] == 'Approve'
       application_pet.update(status: 'Approved')
       redirect_to admin_application_path(params[:application_id])
