@@ -5,8 +5,8 @@
     <% pet = ap.pet %>
     <%= link_to pet.name, pet_path(pet) %><br>
     <% if ap.status == 'Pending' %>
-      <%= button_to "Approve #{pet.name}", "/applications/#{@application.id}/#{pet.id}?status=Approve", method: :patch %><br>
-      <%= button_to "Reject #{pet.name}", "/applications/#{@application.id}/#{pet.id}?status=Reject", method: :patch %><br>
+      <%= button_to 'Approve', application_pet_path(ap.pet), method: :patch, params: { application_id: @application.id, status: 'Approve' } %><br>
+      <%= button_to "Reject", application_pet_path(ap.pet), method: :patch, params: { application_id: @application.id, status: 'Approve' } %><br>
     <% elsif ap.status == 'Approved' %>
       <%= "#{pet.name} is approved for this application" %>
     <% else %>

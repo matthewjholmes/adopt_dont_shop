@@ -26,7 +26,7 @@ Application Status: <%= @application.status %>
   <% @pets.each do |pet| %>
   <div id="pet-<%= pet.id %>">
     <%= link_to pet.name, "/pets/#{pet.id}" %>
-    <%= button_to "Add to this Application", "/applications/#{@application.id}/#{pet.id}", method: :post %>
+    <%= button_to "Add to this Application", application_pets_path, method: :post, params: { pet_id: pet.id, application_id: @application.id } %>
   </div>
   <% end %>
 <% end %>

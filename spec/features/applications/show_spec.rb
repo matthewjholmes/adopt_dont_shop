@@ -44,7 +44,6 @@ RSpec.describe 'application show page' do
       it 'i can add pet to application with button' do
         fill_in :search, with: @pet3.name
         click_button 'Search'
-
         within("#pet-#{@pet3.id}") do
           click_button 'Add to this Application'
         end
