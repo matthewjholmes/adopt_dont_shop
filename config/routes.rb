@@ -6,6 +6,13 @@ Rails.application.routes.draw do
 
   resources :application_pets
 
+  post '/applications/:application_id/:pet_id', to: 'application_pets#create'
+
+  namespace :admin do
+    resources :shelters
+    resources :applications
+  end
+
   get '/shelters', to: 'shelters#index'
   get '/shelters/new', to: 'shelters#new'
   get '/shelters/:id', to: 'shelters#show'
@@ -42,5 +49,4 @@ Rails.application.routes.draw do
   get '/veterinary_offices/:veterinary_office_id/veterinarians/new', to: 'veterinarians#new'
   post '/veterinary_offices/:veterinary_office_id/veterinarians', to: 'veterinarians#create'
 
-  post '/applications/:application_id/:pet_id', to: 'application_pets#create'
 end
